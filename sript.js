@@ -63,13 +63,12 @@ function loadHiRes(entries, observer) {
 
   img.addEventListener("load", function () {
     observer.unobserve(img);
-    console.log(img.src);
   });
 }
 
 const galleryObserver = new IntersectionObserver(loadHiRes, {
   root: null,
-  threshold: 1,
+  threshold: 0.5,
 });
 
 const galleryImages = document.querySelectorAll(".gallery-image img");
@@ -97,4 +96,14 @@ window.addEventListener("resize", function (e) {
 
 // ****************************************************
 // -------------MASONRY GRID LAYOUT END----------------
+// ****************************************************
+//
+//
+//
+// ****************************************************
+// --------------CARD COMPONENTS-----------------------
+// ****************************************************
+
+// ****************************************************
+// -----------CARD COMPONENTS END----------------------
 // ****************************************************

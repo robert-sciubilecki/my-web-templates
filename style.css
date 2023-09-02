@@ -14,7 +14,7 @@ SPACING SYSTEM (px)
 body {
   /* setting font size for rem usage */
   font-size: 10px;
-  font-family: sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 :root {
@@ -25,6 +25,11 @@ body {
 /* ****************************************************
 ----------------MASONRY GRID LAYOUT-----------------
 **************************************************** */
+
+.gallery-header {
+  font-size: 4.4rem;
+  font-weight: 700;
+}
 
 .masonry-gallery {
   background-color: var(--masonry-background);
@@ -40,8 +45,8 @@ body {
 .masonry-header {
   position: fixed;
   width: 100%;
-  height: 10rem;
-  background-color: blueviolet;
+  height: 7.4rem;
+  background-color: rgba(31, 4, 56, 0.555);
   display: flex;
   align-items: center;
   padding: 0 2vw;
@@ -54,7 +59,7 @@ body {
   width: 100%;
   display: flex;
   gap: 1rem;
-  padding: 12rem 2vh;
+  padding: 8.6rem 2vh;
 }
 
 .column-gallery {
@@ -102,4 +107,20 @@ img {
 
 /* ****************************************************
 -------------MASONRY GRID LAYOUT END----------------
+**************************************************** */
+
+/* ****************************************************
+--------------CARD COMPONENTS-----------------------
+**************************************************** */
+
+.grid {
+  display: grid;
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ****************************************************
+-----------CARD COMPONENTS END----------------------
 **************************************************** */
