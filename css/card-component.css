@@ -15,34 +15,305 @@ body {
   /* setting font size for rem usage */
   font-size: 10px;
   font-family: "Rubik", sans-serif;
+  background-color: var(--card-background);
 }
 
 :root {
-  --card-background: #dcf5e0;
-  --card-color: #08150a;
+  --card-background: #dcf5e08a;
+  --card-color: #303030;
 }
 
 /* ****************************************************
 --------------CARD COMPONENTS-----------------------
 **************************************************** */
 
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
 .grid {
   display: grid;
+  justify-items: center;
 }
 
 .grid--3-cols {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .card-component-section {
-  background-color: var(--card-background);
   height: 100vh;
+  margin-top: 20rem;
+}
+
+.card-component {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.card-img {
+  display: flex;
+  justify-content: center;
 }
 
 .card {
-  width: 100px;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.253);
+  width: 80%;
+  border-radius: 9px;
+  /* can't make top pick visible in any way suggested anywhere <facepalm> */
+  /* overflow: hidden; */
+  background-color: white;
+  transition: 0.5s;
+  position: relative;
+}
+
+/* Looks cool but it just doesn't suit these elements */
+/* .card:hover {
+  transform: translateY(-0.11rem);
+  box-shadow: 0 4rem 5rem rgba(0, 0, 0, 0.171);
+} */
+
+.card-img {
+  width: 100%;
+  border-radius: 9px 9px 0 0;
+}
+
+.plan-header {
+  display: block;
+  color: white;
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.plan-color {
+  background-color: #2da140;
+  padding: 0.1rem 0.6rem;
+  border-radius: 19px;
+}
+
+.iron {
+  background-color: rgb(124, 62, 21);
+}
+
+.silver {
+  background-color: silver;
+}
+
+.golden {
+  background-color: gold;
+}
+
+.features-container {
+  padding: 2rem 2rem 3rem 2rem;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  color: var(--card-color);
+  margin-bottom: 2rem;
+}
+
+.feature-item {
+  font-size: 1.2rem;
+}
+
+.feature-text {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta-button {
+  box-shadow: 0 0 0.2rem rgba(11, 177, 11, 0.541);
+}
+
+.btn {
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  background-color: #2da140;
+  color: #f4fff6;
+  font-size: 1.4rem;
+  /* font-weight: bold; */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #50b962;
+  color: white;
+}
+
+.btn:active {
+  box-shadow: 0 3px inset #2c5c34;
+  background-color: #288b38;
+  transition: none;
+}
+
+.card.top-pick::after {
+  content: "TOP PICK";
+  position: absolute;
+  right: -3rem;
+  top: -1rem;
+  background-color: #ff0000;
+  padding: 0.6rem 1rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
 /* ****************************************************
 -----------CARD COMPONENTS END----------------------
+**************************************************** */
+
+/* ****************************************************
+--------------------MODAL WINDOW-----------------------
+**************************************************** */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #30303046;
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  animation: fade-in 0.5s ease;
+}
+
+.modal-window {
+  width: 40rem;
+  background-color: rgba(255, 255, 255, 0.801);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  border-radius: 9px;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+  animation: fade-in 0.3s ease;
+}
+
+.relative-div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-window-header {
+  color: var(--card-color);
+  font-size: 2rem;
+}
+
+.plan,
+.plan-span {
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0.1rem 0.1rem;
+  margin: 0 0.5rem;
+  border-radius: 9px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1.4rem;
+}
+
+.area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.width80 {
+  width: 80%;
+}
+
+.input-short {
+  height: 2rem;
+}
+
+.input {
+  background-color: #eeeeee;
+  border: 1px solid rgba(0, 0, 0, 0.699);
+}
+
+.message-input {
+  resize: none;
+}
+
+.form-label {
+  font-size: 1.2rem;
+  color: var(--card-color);
+}
+
+.btn-send {
+  border-radius: 0;
+}
+
+.hidden {
+  animation: fade-out 0.35s ease;
+}
+
+.display-none {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  font-size: 2rem;
+  right: 1rem;
+  top: 1rem;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 1px inset black;
+}
+
+/* ****************************************************
+----------------MODAL WINDOW- END----------------------
 **************************************************** */

@@ -14,25 +14,155 @@
     <link rel="stylesheet" href="css/card-component.css" />
   </head>
   <body>
-    <section class="card-component-section">
+    <section class="card-component-section container">
       <main class="card-component grid grid--3-cols">
         <div class="card">
-          <div class="card-img">
-            <img class="card-img" src="images-lessons/lowest.jpg" alt="" />
+          <img class="card-img" src="images-lessons/lowest.jpg" alt="" />
+          <h3 class="plan-header iron">
+            <span class="plan-color">Plan: Iron</span>
+          </h3>
+          <div class="features-container">
+            <ul class="feature-list">
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="calendar-outline"></ion-icon>1h/Month
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="book-outline"></ion-icon>Easy homeworks
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="cash-outline"></ion-icon>Low cost
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="film-outline"></ion-icon>Study materials
+                </p>
+              </li>
+            </ul>
+            <button class="btn cta-button">Book a lesson</button>
           </div>
-          <div class="card">
-            <div class="card-img">
-              <img class="card-img" src="images-lessons/medium.jpg" alt="" />
-            </div>
+        </div>
+        <div class="card top-pick">
+          <img class="card-img" src="images-lessons/medium.jpg" alt="" />
+          <h3 class="plan-header silver">
+            <span class="plan-color">Plan: Silver</span>
+          </h3>
+          <div class="features-container">
+            <ul class="feature-list">
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="calendar-outline"></ion-icon>1h/Month
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="book-outline"></ion-icon>Easy homeworks
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="cash-outline"></ion-icon>Low cost
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="film-outline"></ion-icon>Study materials
+                </p>
+              </li>
+            </ul>
+            <button class="btn cta-button">Book a lesson</button>
           </div>
-          <div class="card">
-            <div class="card-img">
-              <img class="card-img" src="images-lessons/highest.jpg" alt="" />
-            </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images-lessons/highest.jpg" alt="" />
+          <h3 class="plan-header golden">
+            <span class="plan-color">Plan: Golden</span>
+          </h3>
+          <div class="features-container">
+            <ul class="feature-list">
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="calendar-outline"></ion-icon>1h/Month
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="book-outline"></ion-icon>Easy homeworks
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="cash-outline"></ion-icon>Low cost
+                </p>
+              </li>
+              <li class="feature-item">
+                <p class="feature-text">
+                  <ion-icon name="film-outline"></ion-icon>Study materials
+                </p>
+              </li>
+            </ul>
+            <button class="btn cta-button">Book a lesson</button>
           </div>
         </div>
       </main>
     </section>
+    <div class="modal-window hidden display-none">
+      <div class="relative-div width100">
+        <header class="modal-header">
+          <h3 class="modal-window-header">Book your first lesson!</h3>
+          <p class="plan">For<span class="plan-span">''</span>lesson plan</p>
+        </header>
+
+        <form class="contact-form width100">
+          <div class="name-area area width80">
+            <label for="name_in_0" class="form-label">Name:</label>
+            <input
+              type="text"
+              id="name_in_0"
+              class="name-input input-short input"
+            />
+          </div>
+          <div class="email-area area width80">
+            <label for="em_in_1" class="form-label">Email:</label>
+            <input
+              type="email"
+              id="em_in_1"
+              class="email-input input-short input"
+            />
+          </div>
+          <div class="message-area area width80">
+            <label for="txt_in_2" class="form-label">Message:</label>
+            <textarea
+              name="message"
+              id="txt_in_2"
+              class="message-input input"
+              cols="30"
+              rows="10"
+              placeholder="This doesn't really work right now :P"
+            ></textarea>
+          </div>
+          <div class="send-button area width80">
+            <button class="btn btn-send width100">Send</button>
+          </div>
+        </form>
+
+        <ion-icon class="close-btn" name="close-outline"></ion-icon>
+      </div>
+    </div>
+    <div class="overlay hidden display-none"></div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="js/card-component.js"></script>
   </body>
 </html>
